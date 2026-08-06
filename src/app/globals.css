@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a2e2a;
+
+  /* Brand palette — mint/teal, derived from the clinic's existing logo
+     and social media graphics (info/*.jpeg). */
+  --brand-50: #f0faf7;
+  --brand-100: #dcf3ec;
+  --brand-200: #b8e6d9;
+  --brand-300: #8ad4c0;
+  --brand-400: #5cbfa6;
+  --brand-500: #38a68c;
+  --brand-600: #2a8672;
+  --brand-700: #226a5b;
+  --brand-800: #1c5449;
+  --brand-900: #17453c;
+
+  --accent-leaf: #7ed957;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-accent-leaf: var(--accent-leaf);
+
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-heading);
+}
+
+/* Institutional/medical site: enforce the light brand theme regardless of
+   OS preference, so trust colors and photography render consistently. */
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background: var(--brand-200);
+  color: var(--brand-900);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-500);
+  outline-offset: 2px;
+}
