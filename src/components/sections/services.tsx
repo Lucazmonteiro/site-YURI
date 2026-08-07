@@ -23,7 +23,7 @@ const services = [
     title: "Konsultacja + akupunktura",
     description:
       "Pełna konsultacja połączona z sesją akupunktury w ramach jednej wizyty.",
-    image: "/images/service-moxa.jpg",
+    image: "/images/service-consult-plan.jpg",
   },
   {
     title: "Irydologia",

@@ -14,7 +14,7 @@ const pillars = [
   {
     title: "Medycyna zintegrowana",
     description:
-      "40 lat akademickiego doświadczenia medycznego połączone z akupunkturą, terapią Su Jok i ziołolecznictwem Wschodu.",
+      "Łączenie akademickiego doświadczenia medycznego ze wschodnimi metodami (akupunktura, terapia Su Jok, irydologia) oraz fitoterapią (ziołolecznictwem).",
     icon: (
       <path
         d="M12 21c-4-2.5-8-6-8-11a5 5 0 0110-1 5 5 0 0110 1c0 5-4 8.5-8 11z"
@@ -35,18 +35,6 @@ const pillars = [
       />
     ),
   },
-  {
-    title: "Współpraca z lekarzami",
-    description:
-      "Nowoczesna diagnostyka (USG, TK, MR) gdy wskazana oraz konsultacje z zaprzyjaźnionymi polskimi lekarzami.",
-    icon: (
-      <path
-        d="M9 12l2 2 4-4M12 3l8 4v5c0 4.5-3.5 8.5-8 9-4.5-.5-8-4.5-8-9V7l8-4z"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    ),
-  },
 ];
 
 export default function Philosophy() {
@@ -58,7 +46,7 @@ export default function Philosophy() {
             Filozofia gabinetu
           </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-white sm:text-4xl">
-            Leczymy człowieka, nie chorobę
+            Wspieramy człowieka, nie chorobę
           </h2>
           <p className="mt-4 text-brand-100">
             Podejście holistyczne nie oznacza rezygnacji z rzetelnej wiedzy
@@ -66,7 +54,7 @@ export default function Philosophy() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-3">
           {pillars.map((pillar) => (
             <div
               key={pillar.title}

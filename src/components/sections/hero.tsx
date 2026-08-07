@@ -2,7 +2,7 @@ import Image from "next/image";
 import BooksyButton from "@/components/ui/booksy-button";
 
 const trustBadges = [
-  "40+ lat doświadczenia w medycynie",
+  "20+ lat doświadczenia w medycynie",
   "Certyfikat Korea Su Jok Institute",
   "Warszawa-Bielany",
 ];
@@ -22,15 +22,15 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-2 lg:items-center lg:px-8">
         <div>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
-            Gabinet Terapii Naturalnych · Yuriy Tokar
+            Gabinet Terapii Naturalnych · Jurij Tokar
           </p>
           <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-brand-900 sm:text-5xl">
-            Leczymy człowieka,
+            Wspieramy człowieka,
             <br />
             nie chorobę
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-neutral-700">
-            Zintegrowane podejście łączące 40 lat doświadczenia medycznego z
+            Zintegrowane podejście łączące 20 lat doświadczenia medycznego z
             wiedzą wschodniej akupunktury i terapii Su Jok. Indywidualna
             diagnoza, konsultacja i terapia — dopasowane do Ciebie, nie do
             schematu.
@@ -70,7 +70,7 @@ export default function Hero() {
           <div className="relative mx-auto aspect-square w-56 overflow-hidden rounded-full ring-4 ring-brand-100 sm:w-64">
             <Image
               src="/images/doctor-avatar.jpg"
-              alt="Dr Yuriy Tokar, specjalista akupunktury i terapii Su Jok"
+              alt="Dr Jurij Tokar, specjalista akupunktury i terapii Su Jok"
               fill
               priority
               sizes="256px"
@@ -78,10 +78,10 @@ export default function Hero() {
             />
           </div>
           <h2 className="mt-6 font-serif text-3xl font-semibold text-brand-900">
-            Droga od chirurgii do medycyny integracyjnej
+            Droga od chirurgii do medycyny holistycznej
           </h2>
           <p className="mt-3 text-neutral-600">
-            Dr Yuriy Tokar — od chirurga dziecięcego do specjalisty
+            Dr Jurij Tokar — od chirurga dziecięcego do specjalisty
             akupunktury i terapii Su Jok, praktykującego w Warszawie od
             1998 roku.
           </p>

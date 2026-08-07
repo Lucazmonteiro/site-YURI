@@ -24,18 +24,6 @@ export default function Credentials() {
   return (
     <section id="certyfikaty" className="bg-sky-50 py-20">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8">
-        <div className="mx-auto w-full max-w-sm lg:mx-0">
-          <div className="relative overflow-hidden rounded-xl bg-white shadow-xl ring-2 ring-brand-300">
-            <Image
-              src="/images/certificate-sujok.jpg"
-              alt="Certyfikat Koreańskiego Instytutu Akupunktury Su Jok wystawiony dla Yuriya Tokara"
-              width={480}
-              height={480}
-              className="h-auto w-full"
-            />
-          </div>
-        </div>
-
         <div>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
             Certyfikaty i doświadczenie
@@ -69,6 +57,18 @@ export default function Credentials() {
               </div>
             ))}
           </dl>
+        </div>
+
+        <div className="mx-auto w-full max-w-sm lg:mx-0">
+          <div className="relative overflow-hidden rounded-xl bg-white shadow-xl ring-2 ring-brand-300">
+            <Image
+              src="/images/certificate-sujok.jpg"
+              alt="Certyfikat Koreańskiego Instytutu Akupunktury Su Jok wystawiony dla Jurija Tokara"
+              width={480}
+              height={480}
+              className="h-auto w-full"
+            />
+          </div>
         </div>
       </div>
     </section>

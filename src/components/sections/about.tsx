@@ -47,7 +47,7 @@ export default function About() {
             O lekarzu
           </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-brand-900 sm:text-4xl">
-            Ponad 40 lat doświadczenia w medycynie
+            Ponad 40 lat pracy z pacjentami
           </h2>
 
           <blockquote className="mt-8 rounded-2xl border border-brand-200 border-l-4 border-l-brand-500 bg-white px-6 py-5 font-serif text-xl italic leading-relaxed text-brand-900 shadow-md">
@@ -74,8 +74,7 @@ export default function About() {
             Dziś w gabinecie łączy zdobytą wiedzę akademicką i doświadczenie
             lekarskie z tajnikami medycyny Wschodu, uprawiając medycynę
             zintegrowaną. Sięga po współczesną diagnostykę (USG, TK, MR),
-            gdy jest to wskazane, i zasięga opinii polskich lekarzy — swoich
-            przyjaciół. Leczy pacjentów, a nie choroby, stosując
+            gdy jest to wskazane. Leczy pacjentów, a nie choroby, stosując
             indywidualne podejście do każdego, unikając sztampy i
             szufladkowania.
           </p>
