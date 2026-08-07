@@ -26,7 +26,7 @@ export default function AntiSmoking() {
   return (
     <section id="antynikotynowa" className="bg-brand-50 py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-brand-200">
+        <div className="overflow-hidden rounded-3xl bg-white shadow-lg ring-2 ring-brand-300">
           <div className="grid lg:grid-cols-2">
             <div className="relative aspect-square w-full self-start">
               <Image

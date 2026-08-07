@@ -33,19 +33,6 @@ export default function Footer() {
               </a>
             ))}
           </nav>
-
-          <div className="text-sm text-neutral-600">
-            <span>{siteConfig.phoneDisplay}</span>
-            <br />
-            <a
-              href={siteConfig.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-brand-700"
-            >
-              {siteConfig.instagramHandle}
-            </a>
-          </div>
         </div>
 
         <div className="mt-10 border-t border-brand-100 pt-6 text-xs text-neutral-400">

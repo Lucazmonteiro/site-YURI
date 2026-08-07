@@ -6,8 +6,17 @@ const mapsSearchUrl =
 
 export default function Contact() {
   return (
-    <section id="kontakt" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-      <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+    <section id="kontakt" className="relative overflow-hidden bg-white py-20">
+      <div
+        aria-hidden="true"
+        className="animate-float-slow pointer-events-none absolute -right-24 -top-10 h-72 w-72 rounded-full bg-brand-200/40 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="animate-float-slow-alt pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-sky-200/40 blur-3xl"
+      />
+
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
             Kontakt
@@ -58,10 +67,28 @@ export default function Contact() {
                 </dd>
               </div>
             </div>
+            <div className="flex items-start gap-3">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="mt-0.5 h-6 w-6 shrink-0 text-brand-600">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg>
+              <div>
+                <dt className="font-semibold text-brand-900">Facebook</dt>
+                <dd>
+                  <a
+                    href={siteConfig.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-700 hover:underline"
+                  >
+                    {siteConfig.facebookHandle}
+                  </a>
+                </dd>
+              </div>
+            </div>
           </dl>
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-4 rounded-3xl bg-brand-50 p-10 text-center ring-1 ring-brand-200">
+        <div className="flex flex-col items-center justify-center gap-4 rounded-3xl bg-brand-50 p-10 text-center shadow-md ring-1 ring-brand-300">
           <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-14 w-14 text-brand-500">
             <path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z M12 13a3 3 0 100-6 3 3 0 000 6z" strokeLinecap="round" strokeLinejoin="round" />
           </svg>

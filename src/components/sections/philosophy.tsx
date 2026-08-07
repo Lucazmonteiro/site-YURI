@@ -51,7 +51,7 @@ const pillars = [
 
 export default function Philosophy() {
   return (
-    <section id="filozofia" className="bg-brand-900 py-20">
+    <section id="filozofia" className="bg-gradient-to-br from-brand-900 to-sky-900 py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-300">
@@ -70,7 +70,7 @@ export default function Philosophy() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
+              className="rounded-2xl border border-white/25 bg-white/5 p-6 shadow-md backdrop-blur-sm"
             >
               <svg
                 aria-hidden="true"

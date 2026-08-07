@@ -4,8 +4,8 @@ import Philosophy from "@/components/sections/philosophy";
 import Services from "@/components/sections/services";
 import AntiSmoking from "@/components/sections/anti-smoking";
 import Credentials from "@/components/sections/credentials";
+import Testimonials from "@/components/sections/testimonials";
 import Contact from "@/components/sections/contact";
-import CtaBanner from "@/components/sections/cta-banner";
 
 export default function Home() {
   return (
@@ -16,8 +16,8 @@ export default function Home() {
       <Services />
       <AntiSmoking />
       <Credentials />
+      <Testimonials />
       <Contact />
-      <CtaBanner />
     </>
   );
 }

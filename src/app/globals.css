@@ -18,6 +18,20 @@
   --brand-900: #17453c;
 
   --accent-leaf: #7ed957;
+
+  /* Pool-blue accent — same lightness steps as the brand scale, hue
+     shifted toward soft sky/pool blue, so the two palettes always pair
+     harmoniously and share the same contrast behavior against text. */
+  --sky-50: #f0f8fb;
+  --sky-100: #dcedf5;
+  --sky-200: #b8dcec;
+  --sky-300: #8ac4dd;
+  --sky-400: #5ca9c9;
+  --sky-500: #3c8fb0;
+  --sky-600: #2d7294;
+  --sky-700: #255c78;
+  --sky-800: #1f4a61;
+  --sky-900: #1a3d51;
 }
 
 @theme inline {
@@ -36,8 +50,51 @@
   --color-brand-900: var(--brand-900);
   --color-accent-leaf: var(--accent-leaf);
 
+  --color-sky-50: var(--sky-50);
+  --color-sky-100: var(--sky-100);
+  --color-sky-200: var(--sky-200);
+  --color-sky-300: var(--sky-300);
+  --color-sky-400: var(--sky-400);
+  --color-sky-500: var(--sky-500);
+  --color-sky-600: var(--sky-600);
+  --color-sky-700: var(--sky-700);
+  --color-sky-800: var(--sky-800);
+  --color-sky-900: var(--sky-900);
+
   --font-sans: var(--font-geist-sans);
   --font-serif: var(--font-heading);
+
+  /* Slow, gentle drift for the decorative blurred accent blobs on plain
+     sections — barely perceptible, never distracting from content. */
+  --animate-float-slow: float-slow 18s ease-in-out infinite;
+  --animate-float-slow-alt: float-slow-alt 22s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(24px, -28px) scale(1.06);
+  }
+}
+
+@keyframes float-slow-alt {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-28px, 24px) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-slow-alt {
+    animation: none;
+  }
 }
 
 /* Institutional/medical site: enforce the light brand theme regardless of

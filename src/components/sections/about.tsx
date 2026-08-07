@@ -25,8 +25,8 @@ const timeline = [
 
 export default function About() {
   return (
-    <section id="o-lekarzu" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-      <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
+    <section id="o-lekarzu" className="bg-sky-50 py-20">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:gap-16 lg:px-8">
         <div className="lg:col-span-2">
           <div className="sticky top-24 text-center">
             <div className="relative mx-auto aspect-square w-48 overflow-hidden rounded-full ring-4 ring-brand-100">
@@ -50,7 +50,7 @@ export default function About() {
         </div>
 
         <div className="lg:col-span-3">
-          <blockquote className="rounded-2xl border-l-4 border-brand-500 bg-brand-50 px-6 py-5 font-serif text-xl italic leading-relaxed text-brand-900">
+          <blockquote className="rounded-2xl border border-brand-200 border-l-4 border-l-brand-500 bg-white px-6 py-5 font-serif text-xl italic leading-relaxed text-brand-900 shadow-md">
             „Zrozumiałem, że zwalczanie choroby, a odzyskiwanie zdrowia to nie
             to samo.”
           </blockquote>

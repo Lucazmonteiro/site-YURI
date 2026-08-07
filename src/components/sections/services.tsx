@@ -1,72 +1,169 @@
 import Image from "next/image";
 
+// Booksy's merchant invite link for this profile — the CTA below the
+// services grid sends clients straight to the booking panel to pick a
+// service and slot.
+const SERVICES_BOOKING_URL =
+  "https://booksy.com/pl-pl/77387_gabinet-terapii-naturalnych_medycyna-naturalna_3_warszawa?do=invite&_branch_match_id=1613976803284078329&utm_medium=merchant_customer_invite&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT07J0UvKz88urtRLzs/VN0tO8rMMCiz1ikiyrytKTUstKsrMS49PKsovL04tsnXOKMrPTQUAnQF3kjwAAAA=";
+
 const services = [
   {
     title: "Akupunktura klasyczna",
     description:
       "Tradycyjna akupunktura chińska wspierająca organizm w przywracaniu równowagi i łagodzeniu dolegliwości bólowych.",
     image: "/images/service-acupuncture.jpg",
+    price: "150,00 zł",
   },
   {
-    title: "Terapia Su Jok",
+    title: "Wizyta diagnostyka-konsultacja",
     description:
-      "Koreańska metoda akupunktury dłoni i stóp (Onnuri Su Jok) — certyfikowana terapia stosowana od ponad 30 lat.",
+      "Szczegółowy wywiad i ocena stanu pacjenta — punkt wyjścia do doboru odpowiedniej terapii.",
+    image: "/images/service-consult.jpg",
+    price: "200,00 zł",
+    originalPrice: "250,00 zł",
+    badge: "Zaoszczędź do 20%",
+  },
+  {
+    title: "Konsultacja + akupunktura",
+    description:
+      "Pełna konsultacja połączona z sesją akupunktury w ramach jednej wizyty.",
     image: "/images/service-moxa.jpg",
+    price: "240,00 zł",
+    originalPrice: "300,00 zł",
+    badge: "Zaoszczędź do 20%",
   },
   {
     title: "Irydologia",
     description: "Diagnoza z tęczówki oka — nieinwazyjna ocena stanu organizmu wspierająca proces terapeutyczny.",
     image: "/images/service-iridology.jpg",
+    price: "200,00 zł",
+    originalPrice: "250,00 zł",
+    badge: "Zaoszczędź do 20%",
+  },
+  {
+    title: "Terapia antynikotynowa",
+    description:
+      "Kompleksowa terapia łącząca akupunkturę, NLP i ziołolecznictwo — pomaga skutecznie rzucić palenie.",
+    image: "/images/service-antismoking.jpg",
+    price: "240,00 zł",
+    originalPrice: "300,00 zł",
+    badge: "Zaoszczędź do 20%",
   },
   {
     title: "Ziołolecznictwo",
     description:
       "Indywidualnie dobrane mieszanki ziołowe, wspomagające terapię i dostosowane do potrzeb konkretnego pacjenta.",
     image: "/images/service-herbal.jpg",
+    priceNote: "Wycena indywidualna podczas konsultacji",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="uslugi" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-      <div className="max-w-2xl">
-        <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
-          Nasza oferta
-        </p>
-        <h2 className="mt-3 font-serif text-3xl font-semibold text-brand-900 sm:text-4xl">
-          Terapie dopasowane do Ciebie
-        </h2>
-        <p className="mt-4 text-neutral-600">
-          Każda wizyta zaczyna się od wywiadu i diagnozy — dopiero potem
-          dobierana jest odpowiednia kombinacja terapii.
-        </p>
-      </div>
+    <section id="uslugi" className="relative overflow-hidden bg-white py-20">
+      <div
+        aria-hidden="true"
+        className="animate-float-slow pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="animate-float-slow-alt pointer-events-none absolute -right-20 bottom-10 h-80 w-80 rounded-full bg-brand-200/40 blur-3xl"
+      />
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {services.map((service) => (
-          <div
-            key={service.title}
-            className="flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm transition-shadow hover:shadow-md"
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
+            Nasza oferta
+          </p>
+          <h2 className="mt-3 font-serif text-3xl font-semibold text-brand-900 sm:text-4xl">
+            Terapie dopasowane do Ciebie
+          </h2>
+          <p className="mt-4 text-neutral-600">
+            Każda wizyta zaczyna się od wywiadu i diagnozy — dopiero potem
+            dobierana jest odpowiednia kombinacja terapii. Ceny zgodne z
+            aktualnym cennikiem na Booksy.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className="flex flex-col overflow-hidden rounded-2xl border border-brand-200 bg-white shadow-md transition-shadow hover:shadow-lg"
+            >
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover"
+                />
+                {service.badge && (
+                  <span className="absolute right-3 top-3 rounded-full bg-brand-600 px-2.5 py-1 text-xs font-semibold text-white shadow-sm">
+                    {service.badge}
+                  </span>
+                )}
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-serif text-lg font-semibold text-brand-900">
+                  {service.title}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">
+                  {service.description}
+                </p>
+
+                <div className="mt-4 flex items-baseline gap-2 border-t border-brand-100 pt-4">
+                  {service.price ? (
+                    <>
+                      <span className="text-lg font-semibold text-brand-900">
+                        {service.price}
+                      </span>
+                      {service.originalPrice && (
+                        <span className="text-sm text-neutral-400 line-through">
+                          {service.originalPrice}
+                        </span>
+                      )}
+                    </>
+                  ) : (
+                    <span className="text-sm font-medium text-brand-700">
+                      {service.priceNote}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-14 flex flex-col items-center gap-4 rounded-3xl bg-gradient-to-br from-brand-600 via-brand-700 to-sky-700 px-6 py-10 text-center shadow-lg sm:px-12">
+          <h3 className="font-serif text-2xl font-semibold text-white sm:text-3xl">
+            Wybierz swój serwis i umów wizytę
+          </h3>
+          <p className="max-w-xl text-brand-50">
+            Pełna lista terapii i wolnych terminów czeka na Booksy — zarezerwuj
+            dogodny termin w kilka sekund.
+          </p>
+          <a
+            href={SERVICES_BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-brand-700 shadow-sm transition-colors hover:bg-brand-50"
           >
-            <div className="relative aspect-[4/3] w-full">
-              <Image
-                src={service.image}
-                alt={service.title}
-                fill
-                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="flex flex-1 flex-col p-6">
-              <h3 className="font-serif text-lg font-semibold text-brand-900">
-                {service.title}
-              </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">
-                {service.description}
-              </p>
-            </div>
-          </div>
-        ))}
+            Umów wizytę przez Booksy
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              className="h-5 w-5"
+            >
+              <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   );

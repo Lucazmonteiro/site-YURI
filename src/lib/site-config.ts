@@ -24,6 +24,8 @@ export const siteConfig = {
   },
   instagram: "https://www.instagram.com/gabinetterapiinaturalnych/",
   instagramHandle: "@gabinetterapiinaturalnych",
+  facebook: "https://www.facebook.com/gabinetjurijtokar/",
+  facebookHandle: "@gabinetjurijtokar",
   bookingUrl: BOOKSY_URL,
 } as const;
 
@@ -33,5 +35,6 @@ export const navLinks = [
   { href: "#uslugi", label: "Usługi" },
   { href: "#antynikotynowa", label: "Terapia antynikotynowa" },
   { href: "#certyfikaty", label: "Certyfikaty" },
+  { href: "#opinie", label: "Opinie" },
   { href: "#kontakt", label: "Kontakt" },
 ] as const;
