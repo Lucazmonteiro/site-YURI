@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SectionLink from "@/components/ui/section-link";
 import { navLinks, siteConfig } from "@/lib/site-config";
 
 export default function Footer() {
@@ -25,13 +26,13 @@ export default function Footer() {
 
           <nav className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm sm:flex sm:flex-wrap">
             {navLinks.map((link) => (
-              <a
+              <SectionLink
                 key={link.href}
                 href={link.href}
                 className="text-neutral-600 hover:text-brand-700"
               >
                 {link.label}
-              </a>
+              </SectionLink>
             ))}
           </nav>
         </div>

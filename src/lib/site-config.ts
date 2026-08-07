@@ -29,6 +29,9 @@ export const siteConfig = {
   bookingUrl: BOOKSY_URL,
 } as const;
 
+// Bare "#anchor" hrefs — correct for the homepage's own in-page smooth
+// scroll. Header/footer are responsible for prepending "/" themselves
+// when rendered on any other route (see their own pathname check).
 export const navLinks = [
   { href: "#o-lekarzu", label: "O lekarzu" },
   { href: "#filozofia", label: "Filozofia" },

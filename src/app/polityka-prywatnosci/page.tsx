@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BackButton from "@/components/ui/back-button";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -10,7 +11,9 @@ export const metadata: Metadata = {
 export default function PolitykaPrywatnosciPage() {
   return (
     <section className="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
-      <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
+      <BackButton />
+
+      <p className="mt-6 text-sm font-semibold uppercase tracking-widest text-brand-600">
         RODO
       </p>
       <h1 className="mt-3 font-serif text-3xl font-semibold text-brand-900 sm:text-4xl">
@@ -37,11 +40,10 @@ export default function PolitykaPrywatnosciPage() {
           </h2>
           <p className="mt-3 leading-relaxed text-neutral-700">
             Administratorem danych osobowych jest {siteConfig.name} —{" "}
-            {siteConfig.doctorName}, {siteConfig.address.line1},{" "}
-            {siteConfig.address.country} (dalej: „Administrator”). Kontakt z
-            Administratorem możliwy jest telefonicznie pod numerem{" "}
-            {siteConfig.phoneDisplay} lub za pośrednictwem profili
-            społecznościowych wskazanych na Stronie.
+            {siteConfig.doctorName} z siedzibą w Warszawie (Bielany), Polska
+            (dalej: „Administrator”). Kontakt z Administratorem możliwy jest
+            telefonicznie pod numerem {siteConfig.phoneDisplay} lub za
+            pośrednictwem profili społecznościowych wskazanych na Stronie.
           </p>
         </div>
 

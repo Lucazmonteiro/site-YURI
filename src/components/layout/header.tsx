@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import BooksyButton from "@/components/ui/booksy-button";
+import SectionLink from "@/components/ui/section-link";
 import { navLinks, siteConfig } from "@/lib/site-config";
 
 export default function Header() {
@@ -12,32 +13,34 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-brand-100 bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+        <Link href="/" className="flex min-w-0 items-center gap-2" onClick={() => setOpen(false)}>
           <Image
             src="/images/logo-icon.jpg"
             alt={siteConfig.name}
             width={36}
             height={36}
-            className="rounded-full"
+            className="shrink-0 rounded-full"
             priority
           />
-          <div className="hidden flex-col leading-tight sm:flex">
-            <span className="font-serif text-lg font-semibold text-brand-800">
+          <div className="flex min-w-0 flex-col leading-tight">
+            <span className="truncate font-serif text-sm font-semibold text-brand-800 sm:text-lg">
               {siteConfig.name}
             </span>
-            <span className="text-xs text-neutral-500">{siteConfig.doctorName}</span>
+            <span className="truncate text-[11px] text-neutral-500 sm:text-xs">
+              {siteConfig.doctorName}
+            </span>
           </div>
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
-            <a
+            <SectionLink
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-neutral-600 transition-colors hover:text-brand-700"
             >
               {link.label}
-            </a>
+            </SectionLink>
           ))}
         </nav>
 
@@ -72,14 +75,14 @@ export default function Header() {
         <div id="mobile-menu" className="border-t border-brand-100 bg-white px-4 pb-6 pt-2 lg:hidden">
           <nav className="flex flex-col gap-1">
             {navLinks.map((link) => (
-              <a
+              <SectionLink
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="rounded-md px-2 py-2.5 text-sm font-medium text-neutral-700 hover:bg-brand-50 hover:text-brand-700"
               >
                 {link.label}
-              </a>
+              </SectionLink>
             ))}
           </nav>
           <div className="mt-4">
