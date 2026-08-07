@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { navLinks, siteConfig } from "@/lib/site-config";
 
 export default function Footer() {
@@ -35,12 +36,18 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-10 border-t border-brand-100 pt-6 text-xs text-neutral-400">
+        <div className="mt-10 flex flex-col gap-3 border-t border-brand-100 pt-6 text-xs text-neutral-400 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. Wszelkie prawa
             zastrzeżone. Treści na stronie mają charakter informacyjny i nie
             zastępują konsultacji lekarskiej.
           </p>
+          <Link
+            href="/polityka-prywatnosci"
+            className="shrink-0 text-neutral-500 hover:text-brand-700 hover:underline"
+          >
+            Polityka prywatności
+          </Link>
         </div>
       </div>
     </footer>

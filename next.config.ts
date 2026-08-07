@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 // Security headers applied to every response. CSP itself (with a per-request
-// nonce) is set in middleware.ts — this list covers the headers that don't
-// need a nonce and can be static.
+// nonce) is set in proxy.ts — this list covers the headers that don't need
+// a nonce and can be static.
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "DENY" },
