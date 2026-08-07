@@ -22,8 +22,6 @@ export const siteConfig = {
     region: "mazowieckie",
     country: "Polska",
   },
-  instagram: "https://www.instagram.com/gabinetterapiinaturalnych/",
-  instagramHandle: "@gabinetterapiinaturalnych",
   facebook: "https://www.facebook.com/gabinetjurijtokar/",
   facebookHandle: "@gabinetjurijtokar",
   bookingUrl: BOOKSY_URL,

@@ -73,7 +73,7 @@ const jsonLd = {
     "@type": "Physician",
     name: siteConfig.doctorName,
   },
-  sameAs: [siteConfig.instagram, siteConfig.facebook],
+  sameAs: [siteConfig.facebook],
 };
 
 export default async function RootLayout({

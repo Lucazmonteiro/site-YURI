@@ -49,25 +49,6 @@ export default function Contact() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="mt-0.5 h-6 w-6 shrink-0 text-brand-600">
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              <div>
-                <dt className="font-semibold text-brand-900">Instagram</dt>
-                <dd>
-                  <a
-                    href={siteConfig.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-brand-700 hover:underline"
-                  >
-                    {siteConfig.instagramHandle}
-                  </a>
-                </dd>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
               <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="mt-0.5 h-6 w-6 shrink-0 text-brand-600">
                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
               </svg>
