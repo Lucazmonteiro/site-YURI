@@ -12,49 +12,36 @@ const services = [
     description:
       "Tradycyjna akupunktura chińska wspierająca organizm w przywracaniu równowagi i łagodzeniu dolegliwości bólowych.",
     image: "/images/service-acupuncture.jpg",
-    price: "150,00 zł",
   },
   {
     title: "Wizyta diagnostyka-konsultacja",
     description:
       "Szczegółowy wywiad i ocena stanu pacjenta — punkt wyjścia do doboru odpowiedniej terapii.",
     image: "/images/service-consult.jpg",
-    price: "200,00 zł",
-    originalPrice: "250,00 zł",
-    badge: "Zaoszczędź do 20%",
   },
   {
     title: "Konsultacja + akupunktura",
     description:
       "Pełna konsultacja połączona z sesją akupunktury w ramach jednej wizyty.",
     image: "/images/service-moxa.jpg",
-    price: "240,00 zł",
-    originalPrice: "300,00 zł",
-    badge: "Zaoszczędź do 20%",
   },
   {
     title: "Irydologia",
     description: "Diagnoza z tęczówki oka — nieinwazyjna ocena stanu organizmu wspierająca proces terapeutyczny.",
     image: "/images/service-iridology.jpg",
-    price: "200,00 zł",
-    originalPrice: "250,00 zł",
-    badge: "Zaoszczędź do 20%",
+    imageFit: "contain",
   },
   {
     title: "Terapia antynikotynowa",
     description:
       "Kompleksowa terapia łącząca akupunkturę, NLP i ziołolecznictwo — pomaga skutecznie rzucić palenie.",
     image: "/images/service-antismoking.jpg",
-    price: "240,00 zł",
-    originalPrice: "300,00 zł",
-    badge: "Zaoszczędź do 20%",
   },
   {
     title: "Ziołolecznictwo",
     description:
       "Indywidualnie dobrane mieszanki ziołowe, wspomagające terapię i dostosowane do potrzeb konkretnego pacjenta.",
     image: "/images/service-herbal.jpg",
-    priceNote: "Wycena indywidualna podczas konsultacji",
   },
 ];
 
@@ -80,8 +67,8 @@ export default function Services() {
           </h2>
           <p className="mt-4 text-neutral-600">
             Każda wizyta zaczyna się od wywiadu i diagnozy — dopiero potem
-            dobierana jest odpowiednia kombinacja terapii. Ceny zgodne z
-            aktualnym cennikiem na Booksy.
+            dobierana jest odpowiednia kombinacja terapii. Pełny cennik i
+            aktualną ofertę usług sprawdzisz na Booksy.
           </p>
         </div>
 
@@ -91,19 +78,14 @@ export default function Services() {
               key={service.title}
               className="flex flex-col overflow-hidden rounded-2xl border border-brand-200 bg-white shadow-md transition-shadow hover:shadow-lg"
             >
-              <div className="relative aspect-[4/3] w-full">
+              <div className="relative aspect-[4/3] w-full bg-brand-50">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover"
+                  className={service.imageFit === "contain" ? "object-contain" : "object-cover"}
                 />
-                {service.badge && (
-                  <span className="absolute right-3 top-3 rounded-full bg-brand-600 px-2.5 py-1 text-xs font-semibold text-white shadow-sm">
-                    {service.badge}
-                  </span>
-                )}
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="font-serif text-lg font-semibold text-brand-900">
@@ -112,25 +94,6 @@ export default function Services() {
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">
                   {service.description}
                 </p>
-
-                <div className="mt-4 flex items-baseline gap-2 border-t border-brand-100 pt-4">
-                  {service.price ? (
-                    <>
-                      <span className="text-lg font-semibold text-brand-900">
-                        {service.price}
-                      </span>
-                      {service.originalPrice && (
-                        <span className="text-sm text-neutral-400 line-through">
-                          {service.originalPrice}
-                        </span>
-                      )}
-                    </>
-                  ) : (
-                    <span className="text-sm font-medium text-brand-700">
-                      {service.priceNote}
-                    </span>
-                  )}
-                </div>
               </div>
             </div>
           ))}
@@ -141,8 +104,8 @@ export default function Services() {
             Wybierz swój serwis i umów wizytę
           </h3>
           <p className="max-w-xl text-brand-50">
-            Pełna lista terapii i wolnych terminów czeka na Booksy — zarezerwuj
-            dogodny termin w kilka sekund.
+            Pełny cennik, opisy terapii i wolne terminy znajdziesz na Booksy —
+            zarezerwuj dogodny termin w kilka sekund.
           </p>
           <a
             href={SERVICES_BOOKING_URL}
