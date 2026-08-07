@@ -66,18 +66,25 @@ export default function Hero() {
           </dl>
         </div>
 
-        <div className="relative mx-auto w-full max-w-md lg:max-w-xl">
-          {/* aspect-square matches terapia-slide.jpg's native 1:1 ratio. */}
-          <div className="relative aspect-square overflow-hidden rounded-[2rem] bg-white shadow-xl ring-1 ring-brand-200">
+        <div className="relative mx-auto w-full max-w-md text-center">
+          <div className="relative mx-auto aspect-square w-56 overflow-hidden rounded-full ring-4 ring-brand-100 sm:w-64">
             <Image
-              src="/images/terapia-slide.jpg"
-              alt="Gabinet Terapii Naturalnych — akupunktura, terapia Su Jok, ziołolecznictwo i terapia manualna"
+              src="/images/doctor-avatar.jpg"
+              alt="Dr Yuriy Tokar, specjalista akupunktury i terapii Su Jok"
               fill
               priority
-              sizes="(min-width: 1024px) 576px, 90vw"
-              className="object-cover object-center"
+              sizes="256px"
+              className="object-cover"
             />
           </div>
+          <h2 className="mt-6 font-serif text-3xl font-semibold text-brand-900">
+            Droga od chirurgii do medycyny integracyjnej
+          </h2>
+          <p className="mt-3 text-neutral-600">
+            Dr Yuriy Tokar — od chirurga dziecięcego do specjalisty
+            akupunktury i terapii Su Jok, praktykującego w Warszawie od
+            1998 roku.
+          </p>
         </div>
       </div>
     </section>

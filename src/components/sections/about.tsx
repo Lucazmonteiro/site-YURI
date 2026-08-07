@@ -28,29 +28,29 @@ export default function About() {
     <section id="o-lekarzu" className="bg-sky-50 py-20">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:gap-16 lg:px-8">
         <div className="lg:col-span-2">
-          <div className="sticky top-24 text-center">
-            <div className="relative mx-auto aspect-square w-48 overflow-hidden rounded-full ring-4 ring-brand-100">
+          <div className="sticky top-24 mx-auto w-full max-w-sm">
+            {/* aspect-square matches terapia-slide.jpg's native 1:1 ratio. */}
+            <div className="relative aspect-square overflow-hidden rounded-[2rem] bg-white shadow-xl ring-2 ring-brand-300">
               <Image
-                src="/images/doctor-avatar.jpg"
-                alt="Dr Yuriy Tokar, specjalista akupunktury i terapii Su Jok"
+                src="/images/terapia-slide.jpg"
+                alt="Gabinet Terapii Naturalnych — akupunktura, terapia Su Jok, ziołolecznictwo i terapia manualna"
                 fill
-                sizes="192px"
-                className="object-cover"
+                sizes="(min-width: 1024px) 400px, 90vw"
+                className="object-cover object-center"
               />
             </div>
-            <h2 className="mt-6 font-serif text-3xl font-semibold text-brand-900">
-              Droga od chirurgii do medycyny integracyjnej
-            </h2>
-            <p className="mt-3 text-neutral-600">
-              Dr Yuriy Tokar — od chirurga dziecięcego do specjalisty
-              akupunktury i terapii Su Jok, praktykującego w Warszawie od
-              1998 roku.
-            </p>
           </div>
         </div>
 
         <div className="lg:col-span-3">
-          <blockquote className="rounded-2xl border border-brand-200 border-l-4 border-l-brand-500 bg-white px-6 py-5 font-serif text-xl italic leading-relaxed text-brand-900 shadow-md">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
+            O lekarzu
+          </p>
+          <h2 className="mt-3 font-serif text-3xl font-semibold text-brand-900 sm:text-4xl">
+            Ponad 40 lat doświadczenia w medycynie
+          </h2>
+
+          <blockquote className="mt-8 rounded-2xl border border-brand-200 border-l-4 border-l-brand-500 bg-white px-6 py-5 font-serif text-xl italic leading-relaxed text-brand-900 shadow-md">
             „Zrozumiałem, że zwalczanie choroby, a odzyskiwanie zdrowia to nie
             to samo.”
           </blockquote>
