@@ -36,11 +36,7 @@ export default function Contact() {
               </svg>
               <div>
                 <dt className="font-semibold text-brand-900">Telefon</dt>
-                <dd>
-                  <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="text-brand-700 hover:underline">
-                    {siteConfig.phoneDisplay}
-                  </a>
-                </dd>
+                <dd className="text-neutral-600">{siteConfig.phoneDisplay}</dd>
               </div>
             </div>
             <div className="flex items-start gap-3">

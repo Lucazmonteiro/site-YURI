@@ -28,11 +28,11 @@ export default function About() {
     <section id="o-lekarzu" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
       <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
         <div className="lg:col-span-2">
-          <div className="sticky top-24">
-            <div className="relative mx-auto aspect-square w-48 overflow-hidden rounded-full ring-4 ring-brand-100 lg:mx-0">
+          <div className="sticky top-24 text-center">
+            <div className="relative mx-auto aspect-square w-48 overflow-hidden rounded-full ring-4 ring-brand-100">
               <Image
                 src="/images/doctor-avatar.jpg"
-                alt="Dr. Jurij Tokar"
+                alt="Dr Yuriy Tokar, specjalista akupunktury i terapii Su Jok"
                 fill
                 sizes="192px"
                 className="object-cover"
@@ -42,7 +42,7 @@ export default function About() {
               Droga od chirurgii do medycyny integracyjnej
             </h2>
             <p className="mt-3 text-neutral-600">
-              Dr Jurij Tokar — od chirurga dziecięcego do specjalisty
+              Dr Yuriy Tokar — od chirurga dziecięcego do specjalisty
               akupunktury i terapii Su Jok, praktykującego w Warszawie od
               1998 roku.
             </p>

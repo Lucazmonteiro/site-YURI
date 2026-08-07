@@ -3,7 +3,7 @@ import { BOOKSY_URL } from "@/lib/site-config";
 type BooksyButtonProps = {
   label?: string;
   size?: "md" | "lg";
-  variant?: "solid" | "outline";
+  variant?: "solid" | "outline" | "inverted";
   className?: string;
 };
 
@@ -22,7 +22,9 @@ export default function BooksyButton({
   const variantClasses =
     variant === "solid"
       ? "bg-brand-600 text-white hover:bg-brand-700"
-      : "bg-white text-brand-700 border border-brand-300 hover:bg-brand-50";
+      : variant === "inverted"
+        ? "bg-white text-brand-700 hover:bg-brand-50"
+        : "bg-white text-brand-700 border border-brand-300 hover:bg-brand-50";
 
   return (
     <a

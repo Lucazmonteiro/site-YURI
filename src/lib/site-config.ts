@@ -8,10 +8,10 @@ export const BOOKSY_URL = "https://gabinetterapiinaturalnych.booksy.com/";
 
 export const siteConfig = {
   name: "Gabinet Terapii Naturalnych",
-  doctorName: "Jurij Tokar",
+  doctorName: "Dr Yuriy Tokar",
   tagline: "Leczymy człowieka, nie chorobę",
   description:
-    "Gabinet Terapii Naturalnych dr. Jurija Tokara w Warszawie-Bielanach. Akupunktura klasyczna, terapia Su Jok, irydologia, ziołolecznictwo i terapia antynikotynowa — zintegrowane podejście łączące medycynę akademicką z Wschodem.",
+    "Gabinet Terapii Naturalnych dr. Yuriya Tokara w Warszawie-Bielanach. Akupunktura klasyczna, terapia Su Jok, irydologia, ziołolecznictwo i terapia antynikotynowa — zintegrowane podejście łączące medycynę akademicką z Wschodem.",
   url: "https://gabinetterapiinaturalnych.pl",
   locale: "pl_PL",
   phone: "+48 609 525 660",

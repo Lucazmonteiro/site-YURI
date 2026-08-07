@@ -28,10 +28,10 @@ export default function AntiSmoking() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-brand-200">
           <div className="grid lg:grid-cols-2">
-            <div className="relative min-h-64 lg:min-h-full">
+            <div className="relative aspect-square w-full self-start">
               <Image
                 src="/images/service-consult.jpg"
-                alt="Konsultacja w Gabinecie Terapii Naturalnych"
+                alt="Leczymy człowieka, nie chorobę — konsultacja w Gabinecie Terapii Naturalnych"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"

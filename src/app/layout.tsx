@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "akupunktura Warszawa",
     "terapia Su Jok",
     "gabinet terapii naturalnych",
-    "Jurij Tokar",
+    "Yuriy Tokar",
     "medycyna naturalna Warszawa",
     "terapia antynikotynowa",
     "irydologia",

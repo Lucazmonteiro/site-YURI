@@ -16,25 +16,13 @@ const services = [
   {
     title: "Irydologia",
     description: "Diagnoza z tęczówki oka — nieinwazyjna ocena stanu organizmu wspierająca proces terapeutyczny.",
-    icon: (
-      <path
-        d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z M12 15a3 3 0 100-6 3 3 0 000 6z"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    ),
+    image: "/images/service-iridology.jpg",
   },
   {
     title: "Ziołolecznictwo",
     description:
       "Indywidualnie dobrane mieszanki ziołowe, wspomagające terapię i dostosowane do potrzeb konkretnego pacjenta.",
-    icon: (
-      <path
-        d="M12 22V12M12 12C7 12 4 9 4 4c5 0 8 3 8 8zM12 12c5 0 8-3 8-8-5 0-8 3-8 8z"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    ),
+    image: "/images/service-herbal.jpg",
   },
 ];
 
@@ -60,31 +48,15 @@ export default function Services() {
             key={service.title}
             className="flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm transition-shadow hover:shadow-md"
           >
-            {service.image ? (
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            ) : (
-              <div className="flex aspect-[4/3] w-full items-center justify-center bg-brand-50">
-                <svg
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                  className="h-12 w-12 text-brand-500"
-                >
-                  {service.icon}
-                </svg>
-              </div>
-            )}
+            <div className="relative aspect-[4/3] w-full">
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
             <div className="flex flex-1 flex-col p-6">
               <h3 className="font-serif text-lg font-semibold text-brand-900">
                 {service.title}

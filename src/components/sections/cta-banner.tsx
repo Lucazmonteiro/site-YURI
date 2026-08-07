@@ -12,11 +12,7 @@ export default function CtaBanner() {
           Booksy, bez telefonowania i czekania.
         </p>
         <div className="mt-8 flex justify-center">
-          <BooksyButton
-            size="lg"
-            label="Umów wizytę teraz"
-            className="bg-white text-brand-700 hover:bg-brand-50"
-          />
+          <BooksyButton size="lg" variant="inverted" label="Umów wizytę teraz" />
         </div>
       </div>
     </section>

@@ -21,9 +21,12 @@ export default function Header() {
             className="rounded-full"
             priority
           />
-          <span className="hidden font-serif text-lg font-semibold text-brand-800 sm:inline">
-            {siteConfig.name}
-          </span>
+          <div className="hidden flex-col leading-tight sm:flex">
+            <span className="font-serif text-lg font-semibold text-brand-800">
+              {siteConfig.name}
+            </span>
+            <span className="text-xs text-neutral-500">{siteConfig.doctorName}</span>
+          </div>
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">

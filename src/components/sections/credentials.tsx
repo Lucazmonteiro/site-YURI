@@ -25,10 +25,10 @@ export default function Credentials() {
     <section id="certyfikaty" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
       <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
         <div className="mx-auto w-full max-w-sm lg:mx-0">
-          <div className="relative -rotate-2 overflow-hidden rounded-xl bg-white shadow-xl ring-1 ring-brand-200">
+          <div className="relative overflow-hidden rounded-xl bg-white shadow-xl ring-1 ring-brand-200">
             <Image
               src="/images/certificate-sujok.jpg"
-              alt="Certyfikat Koreańskiego Instytutu Akupunktury Su Jok wystawiony dla Jurija Tokara"
+              alt="Certyfikat Koreańskiego Instytutu Akupunktury Su Jok wystawiony dla Yuriya Tokara"
               width={480}
               height={480}
               className="h-auto w-full"

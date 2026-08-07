@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-2 lg:items-center lg:px-8">
         <div>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
-            Gabinet Terapii Naturalnych · Jurij Tokar
+            Gabinet Terapii Naturalnych · Yuriy Tokar
           </p>
           <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-brand-900 sm:text-5xl">
             Leczymy człowieka,
@@ -67,14 +67,11 @@ export default function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-md lg:max-w-xl">
-          {/* aspect-[5/3] matches doctor-portrait.jpg's native 720x428 ratio,
-              so object-cover only needs a ~1% crop instead of forcing a
-              landscape photo into a portrait frame (which caused the
-              over-zoomed, cropped-shoulders bug). */}
-          <div className="relative aspect-[5/3] overflow-hidden rounded-[2rem] bg-white shadow-xl ring-1 ring-brand-200">
+          {/* aspect-square matches terapia-slide.jpg's native 1:1 ratio. */}
+          <div className="relative aspect-square overflow-hidden rounded-[2rem] bg-white shadow-xl ring-1 ring-brand-200">
             <Image
-              src="/images/doctor-portrait.jpg"
-              alt="Dr. Jurij Tokar, specjalista akupunktury i terapii Su Jok"
+              src="/images/terapia-slide.jpg"
+              alt="Gabinet Terapii Naturalnych — akupunktura, terapia Su Jok, ziołolecznictwo i terapia manualna"
               fill
               priority
               sizes="(min-width: 1024px) 576px, 90vw"

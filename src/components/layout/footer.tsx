@@ -35,9 +35,7 @@ export default function Footer() {
           </nav>
 
           <div className="text-sm text-neutral-600">
-            <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="hover:text-brand-700">
-              {siteConfig.phoneDisplay}
-            </a>
+            <span>{siteConfig.phoneDisplay}</span>
             <br />
             <a
               href={siteConfig.instagram}
