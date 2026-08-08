@@ -104,6 +104,21 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Touch devices (phones/tablets) get instant anchor jumps instead of a
+   CSS-animated smooth scroll. Smooth-scrolling to a hash target under a
+   `position: sticky` header is a well-documented source of mobile
+   WebKit/Chromium scroll bugs, where the momentum/rubber-band physics can
+   get stuck mid-animation and the page stops responding to further
+   scroll gestures for a beat — this reproduces even with zero custom JS
+   involved, purely from the browser's own hash-navigation handling.
+   Desktop (fine pointer, e.g. mouse) keeps the smooth scroll since it has
+   never exhibited the issue. */
+@media (pointer: coarse) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
