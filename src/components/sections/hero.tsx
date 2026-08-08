@@ -7,6 +7,33 @@ const trustBadges = [
   "Warszawa-Bielany",
 ];
 
+// Shared between two render positions: the original spot after the CTA
+// buttons (desktop) and below the bio paragraph (mobile) — see the two
+// call sites below for why a single stacked column can't reorder across
+// the hero's two grid columns with CSS `order` alone.
+function TrustBadges({ className = "" }: { className?: string }) {
+  return (
+    <dl className={`grid-cols-1 gap-3 border-t border-brand-200 pt-6 sm:grid-cols-3 ${className}`}>
+      {trustBadges.map((badge) => (
+        <div key={badge} className="flex items-start gap-2">
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            className="mt-0.5 h-5 w-5 shrink-0 text-brand-600"
+          >
+            <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          <dd className="text-sm font-medium text-neutral-700">{badge}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
 export default function Hero() {
   return (
     <section id="o-lekarzu" className="relative overflow-hidden bg-brand-50">
@@ -46,24 +73,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <dl className="mt-10 grid grid-cols-1 gap-3 border-t border-brand-200 pt-6 sm:grid-cols-3">
-            {trustBadges.map((badge) => (
-              <div key={badge} className="flex items-start gap-2">
-                <svg
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  className="mt-0.5 h-5 w-5 shrink-0 text-brand-600"
-                >
-                  <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <dd className="text-sm font-medium text-neutral-700">{badge}</dd>
-              </div>
-            ))}
-          </dl>
+          <TrustBadges className="mt-10 hidden lg:grid" />
         </div>
 
         <div
@@ -91,6 +101,8 @@ export default function Hero() {
             akupunktury i terapii Su Jok, praktykującego w Warszawie od
             1998 roku.
           </p>
+
+          <TrustBadges className="mt-8 grid text-left lg:hidden" />
         </div>
       </div>
     </section>
