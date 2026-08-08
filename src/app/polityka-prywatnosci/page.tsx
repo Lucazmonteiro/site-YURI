@@ -120,10 +120,10 @@ export default function PolitykaPrywatnosciPage() {
             6. Odnośniki do serwisów zewnętrznych
           </h2>
           <p className="mt-3 leading-relaxed text-neutral-700">
-            Strona zawiera odnośniki do profilu Facebook oraz do platformy
-            Booksy. Po przejściu na te serwisy obowiązują ich własne,
-            niezależne od niniejszego dokumentu, polityki prywatności i
-            regulaminy.
+            Strona zawiera odnośniki do profili Facebook i Instagram oraz do
+            platformy Booksy. Po przejściu na te serwisy obowiązują ich
+            własne, niezależne od niniejszego dokumentu, polityki prywatności
+            i regulaminy.
           </p>
         </div>
 

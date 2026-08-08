@@ -24,6 +24,8 @@ export const siteConfig = {
   },
   facebook: "https://www.facebook.com/gabinetjurijtokar/",
   facebookHandle: "@gabinetjurijtokar",
+  instagram: "https://www.instagram.com/gabinet_terapii_naturalnej",
+  instagramHandle: "@gabinet_terapii_naturalnej",
   bookingUrl: BOOKSY_URL,
 } as const;
 

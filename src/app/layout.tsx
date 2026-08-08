@@ -4,6 +4,7 @@ import { Lora } from "next/font/google";
 import { headers } from "next/headers";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import BackToTop from "@/components/ui/back-to-top";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -73,7 +74,7 @@ const jsonLd = {
     "@type": "Physician",
     name: siteConfig.doctorName,
   },
-  sameAs: [siteConfig.facebook],
+  sameAs: [siteConfig.facebook, siteConfig.instagram],
 };
 
 export default async function RootLayout({
@@ -97,6 +98,7 @@ export default async function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );
