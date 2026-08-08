@@ -47,14 +47,14 @@ export default function SectionLink({ href, className, onClick, children }: Sect
     // measuring the target's position immediately after would bake in the
     // drawer's still-open height — then a moment later the drawer
     // collapses, the page shifts up, and the scroll lands too far down,
-    // cutting off the title/photo. Wait two frames so the collapsed
-    // layout has actually painted before measuring and jumping.
+    // cutting off the title/photo. A wall-clock delay (rather than
+    // requestAnimationFrame, which can be coalesced/throttled while a
+    // state-driven reflow is also in flight on slower mobile devices)
+    // reliably outlasts the drawer's collapse before we measure and jump.
     onClick?.();
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        scrollInstantly(() => target.scrollIntoView({ block: "start" }));
-      });
-    });
+    window.setTimeout(() => {
+      scrollInstantly(() => target.scrollIntoView({ block: "start" }));
+    }, 60);
   };
 
   if (isHome) {

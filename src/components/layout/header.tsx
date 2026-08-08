@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import BooksyButton from "@/components/ui/booksy-button";
@@ -9,6 +9,17 @@ import { navLinks, siteConfig } from "@/lib/site-config";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+
+  // Nothing in this app locks document.body's scroll — the drawer below
+  // is a plain conditional render with no scroll-lock styling. This is a
+  // hard guarantee rather than an assumption: whenever the drawer isn't
+  // open, explicitly clear any inline overflow style so page scroll can
+  // never be left stuck no matter what closes it.
+  useEffect(() => {
+    if (!open) {
+      document.body.style.overflow = "";
+    }
+  }, [open]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-brand-100 bg-white/90 backdrop-blur-md">
