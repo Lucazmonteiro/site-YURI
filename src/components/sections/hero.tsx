@@ -76,10 +76,7 @@ export default function Hero() {
           <TrustBadges className="mt-10 hidden lg:grid" />
         </div>
 
-        <div
-          id="o-lekarzu-mobile"
-          className="relative mx-auto w-full max-w-md scroll-mt-20 text-center"
-        >
+        <div className="relative mx-auto w-full max-w-md text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
             O lekarzu – Dr Jurij Tokar
           </p>
