@@ -60,7 +60,7 @@ export default function Services() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
-            Nasza oferta
+            Nasze usługi
           </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-brand-900 sm:text-4xl">
             Terapie dopasowane do Ciebie

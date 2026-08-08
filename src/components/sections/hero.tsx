@@ -66,7 +66,10 @@ export default function Hero() {
           </dl>
         </div>
 
-        <div className="relative mx-auto w-full max-w-md text-center">
+        <div
+          id="o-lekarzu-mobile"
+          className="relative mx-auto w-full max-w-md scroll-mt-20 text-center"
+        >
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
             O lekarzu – Dr Jurij Tokar
           </p>
