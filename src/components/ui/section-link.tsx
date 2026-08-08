@@ -36,7 +36,14 @@ export default function SectionLink({ href, className, onClick, children }: Sect
     const target = document.querySelector("#o-lekarzu-mobile");
     if (target) {
       event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      // No explicit `behavior: "smooth"` here — html already sets
+      // `scroll-behavior: smooth` globally, so this call already animates
+      // via CSS. Requesting smooth scrolling from both the JS API and CSS
+      // at once starts two competing scroll animations on the same
+      // container, which on mobile WebKit/Chromium can fight each other
+      // and swallow the user's manual scroll input until they resolve —
+      // it reads as the page being scroll-locked after the tap.
+      target.scrollIntoView({ block: "start" });
     }
   };
 

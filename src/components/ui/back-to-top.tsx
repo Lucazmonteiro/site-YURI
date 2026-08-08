@@ -18,7 +18,12 @@ export default function BackToTop() {
   }, []);
 
   const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // No explicit `behavior: "smooth"` — html already sets
+    // `scroll-behavior: smooth` globally, so this already animates via
+    // CSS. Requesting smooth scrolling from both the JS API and CSS at
+    // once starts two competing scroll animations that can fight each
+    // other on mobile and swallow manual scroll input until they resolve.
+    window.scrollTo({ top: 0 });
   };
 
   return (
