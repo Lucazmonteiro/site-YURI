@@ -30,15 +30,31 @@ export default function SectionLink({ href, className, onClick, children }: Sect
   // instead, skipping the intro text. `lg` (1024px) is where hero.tsx
   // switches from stacked to side-by-side.
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    onClick?.();
-    if (href !== "#o-lekarzu" || window.matchMedia("(min-width: 1024px)").matches) {
+    const target =
+      href === "#o-lekarzu" && !window.matchMedia("(min-width: 1024px)").matches
+        ? document.querySelector("#o-lekarzu-mobile")
+        : null;
+
+    if (!target) {
+      onClick?.();
       return;
     }
-    const target = document.querySelector("#o-lekarzu-mobile");
-    if (target) {
-      event.preventDefault();
-      scrollInstantly(() => target.scrollIntoView({ block: "start" }));
-    }
+
+    event.preventDefault();
+    // `onClick` here is usually the mobile header's `setOpen(false)`,
+    // closing the nav drawer that sits above the Hero section. That state
+    // update hasn't committed/painted yet when this line returns, so
+    // measuring the target's position immediately after would bake in the
+    // drawer's still-open height — then a moment later the drawer
+    // collapses, the page shifts up, and the scroll lands too far down,
+    // cutting off the title/photo. Wait two frames so the collapsed
+    // layout has actually painted before measuring and jumping.
+    onClick?.();
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        scrollInstantly(() => target.scrollIntoView({ block: "start" }));
+      });
+    });
   };
 
   if (isHome) {
