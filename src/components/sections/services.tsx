@@ -17,7 +17,7 @@ const services = [
     title: "Wizyta diagnostyka-konsultacja",
     description:
       "Szczegółowy wywiad i ocena stanu pacjenta — punkt wyjścia do doboru odpowiedniej terapii.",
-    image: "/images/service-consult.jpg",
+    image: "/images/service-diagnostyka-konsultacja.jpg",
   },
   {
     title: "Konsultacja + akupunktura",
