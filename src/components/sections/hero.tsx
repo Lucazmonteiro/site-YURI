@@ -9,7 +9,7 @@ const trustBadges = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-brand-50">
+    <section id="o-lekarzu" className="relative overflow-hidden bg-brand-50">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-sky-200/60 blur-3xl"
@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-2 lg:items-center lg:px-8">
         <div>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
-            Gabinet Terapii Naturalnych · Jurij Tokar
+            Gabinet Terapii Naturalnych
           </p>
           <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-brand-900 sm:text-5xl">
             Wspieramy człowieka,
@@ -67,7 +67,10 @@ export default function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-md text-center">
-          <div className="relative mx-auto aspect-square w-56 overflow-hidden rounded-full ring-4 ring-brand-100 sm:w-64">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
+            O lekarzu – Dr Jurij Tokar
+          </p>
+          <div className="relative mx-auto mt-4 aspect-square w-56 overflow-hidden rounded-full ring-4 ring-brand-100 sm:w-64">
             <Image
               src="/images/doctor-avatar.jpg"
               alt="Dr Jurij Tokar, specjalista akupunktury i terapii Su Jok"

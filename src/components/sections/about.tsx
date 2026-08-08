@@ -25,7 +25,7 @@ const timeline = [
 
 export default function About() {
   return (
-    <section id="o-lekarzu" className="bg-sky-50 py-20">
+    <section className="bg-sky-50 py-20">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:gap-16 lg:px-8">
         <div className="order-2 lg:order-1 lg:col-span-2">
           <div className="mx-auto w-full max-w-sm lg:sticky lg:top-24">
@@ -43,10 +43,7 @@ export default function About() {
         </div>
 
         <div className="order-1 lg:order-2 lg:col-span-3">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
-            O lekarzu
-          </p>
-          <h2 className="mt-3 font-serif text-3xl font-semibold text-brand-900 sm:text-4xl">
+          <h2 className="font-serif text-3xl font-semibold text-brand-900 sm:text-4xl">
             Ponad 40 lat pracy z pacjentami
           </h2>
 
