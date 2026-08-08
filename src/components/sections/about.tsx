@@ -27,8 +27,8 @@ export default function About() {
   return (
     <section id="o-lekarzu" className="bg-sky-50 py-20">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:gap-16 lg:px-8">
-        <div className="lg:col-span-2">
-          <div className="sticky top-24 mx-auto w-full max-w-sm">
+        <div className="order-2 lg:order-1 lg:col-span-2">
+          <div className="mx-auto w-full max-w-sm lg:sticky lg:top-24">
             {/* aspect-square matches terapia-slide.jpg's native 1:1 ratio. */}
             <div className="relative aspect-square overflow-hidden rounded-[2rem] bg-white shadow-xl ring-2 ring-brand-300">
               <Image
@@ -42,7 +42,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="lg:col-span-3">
+        <div className="order-1 lg:order-2 lg:col-span-3">
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
             O lekarzu
           </p>
