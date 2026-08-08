@@ -85,9 +85,17 @@ export default async function RootLayout({
   return (
     <html
       lang="pl"
-      className={`${geistSans.variable} ${lora.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${lora.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      {/* min-h-dvh (dynamic viewport height), not min-h-screen/h-full: the
+          latter track the viewport height at whatever state the mobile
+          browser's address bar happened to be in when first computed, and
+          don't reliably recompute as it collapses/expands during scroll —
+          a well-known source of mobile viewport-height bugs. dvh tracks
+          the actual visible viewport continuously, and body doesn't need
+          html to have a definite height for the percentage to resolve
+          against, since dvh is a standalone unit. */}
+      <body className="flex min-h-dvh flex-col">
         <script
           type="application/ld+json"
           nonce={nonce}
