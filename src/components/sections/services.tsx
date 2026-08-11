@@ -66,9 +66,10 @@ export default function Services() {
             Terapie dopasowane do Ciebie
           </h2>
           <p className="mt-4 text-neutral-600">
-            Każda wizyta zaczyna się od wywiadu i diagnozy — dopiero potem
-            dobierana jest odpowiednia kombinacja terapii. Pełny cennik i
-            aktualną ofertę usług sprawdzisz na Booksy.
+            Każda wizyta w naszym gabinecie w Warszawie zaczyna się od
+            wywiadu i diagnozy — dopiero potem dobierana jest odpowiednia
+            kombinacja terapii. Pełny cennik i aktualną ofertę usług
+            sprawdzisz na Booksy.
           </p>
         </div>
 

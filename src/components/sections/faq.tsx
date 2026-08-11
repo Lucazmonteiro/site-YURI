@@ -1,3 +1,5 @@
+import { headers } from "next/headers";
+
 const acupunctureIndications = [
   "Rwa kulszowa, zapalenie nerwu trójdzielnego i korzonki",
   "Bóle głowy i nerwice niewiadomego pochodzenia",
@@ -38,6 +40,60 @@ const antiSmokingSteps = [
   },
 ];
 
+const antiSmokingIntro =
+  "Skuteczność terapii opiera się na indywidualnym doborze metody dla każdego pacjenta oraz jednoczesnym oddziaływaniu na kilku płaszczyznach — fizycznej, psychicznej i emocjonalnej.";
+const antiSmokingOutro =
+  "Jedyne, co musi zrobić pacjent, to mieć silną motywację oraz rzetelnie wykonywać zalecenia lekarza.";
+
+const iridologyIntro = "Natychmiastowa diagnoza z tęczówki oka pozwala na:";
+
+const firstVisitAnswer =
+  "Jest to wizyta diagnostyczno-konsultacyjna, na której łączę zdobyte doświadczenie z medycyny akademickiej z medycyną naturalną. Przebieg wizyty: diagnoza z tęczówki oka, analiza dostarczonych badań laboratoryjnych, szczegółowy wywiad medyczny, konsultacja, plan terapeutyczny. Wizyta trwa około 1h.";
+
+// Mirrors the visible <details> content below as Q&A pairs so the FAQ
+// section is eligible for Google's FAQ rich results — built from the same
+// arrays/strings rendered in the JSX to avoid the two drifting apart.
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Akupunktura w Warszawie — na co pomaga?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `Akupunktura klasyczna w naszym gabinecie w Warszawie wspiera leczenie m.in.: ${acupunctureIndications.join("; ")}.`,
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Irydologia — a co to takiego?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `${iridologyIntro} ${iridologyBenefits.join(", ")}.`,
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Terapia antynikotynowa w Warszawie — jak przebiega?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `${antiSmokingIntro} ${antiSmokingSteps
+          .map((step) => `${step.title}: ${step.description}`)
+          .join(" ")} ${antiSmokingOutro}`,
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Jak wygląda pierwsza wizyta w gabinecie terapii naturalnych?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: firstVisitAnswer,
+      },
+    },
+  ],
+};
+
 function ChevronIcon() {
   return (
     <svg
@@ -54,9 +110,18 @@ function ChevronIcon() {
   );
 }
 
-export default function Faq() {
+export default async function Faq() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+
   return (
     <section id="warto-wiedziec" className="bg-sky-50 py-20">
+      <script
+        type="application/ld+json"
+        nonce={nonce}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
           Warto wiedzieć
@@ -87,7 +152,7 @@ export default function Faq() {
               <ChevronIcon />
             </summary>
             <div className="mt-4 space-y-3 border-t border-brand-100 pt-4 text-sm leading-relaxed text-neutral-700">
-              <p>Natychmiastowa diagnoza z tęczówki oka pozwala na:</p>
+              <p>{iridologyIntro}</p>
               <ul className="space-y-2">
                 {iridologyBenefits.map((item) => (
                   <li key={item} className="flex gap-2">
@@ -108,12 +173,7 @@ export default function Faq() {
               <ChevronIcon />
             </summary>
             <div className="mt-4 space-y-4 border-t border-brand-100 pt-4 text-sm leading-relaxed text-neutral-700">
-              <p>
-                Skuteczność terapii opiera się na indywidualnym doborze
-                metody dla każdego pacjenta oraz jednoczesnym oddziaływaniu
-                na kilku płaszczyznach — fizycznej, psychicznej i
-                emocjonalnej.
-              </p>
+              <p>{antiSmokingIntro}</p>
               <ul className="space-y-2">
                 {antiSmokingSteps.map((step) => (
                   <li key={step.title} className="flex gap-2">
@@ -125,10 +185,7 @@ export default function Faq() {
                   </li>
                 ))}
               </ul>
-              <p className="italic text-neutral-500">
-                Jedyne, co musi zrobić pacjent, to mieć silną motywację oraz
-                rzetelnie wykonywać zalecenia lekarza.
-              </p>
+              <p className="italic text-neutral-500">{antiSmokingOutro}</p>
             </div>
           </details>
 
@@ -138,12 +195,7 @@ export default function Faq() {
               <ChevronIcon />
             </summary>
             <p className="mt-4 border-t border-brand-100 pt-4 text-sm leading-relaxed text-neutral-700">
-              Jest to wizyta diagnostyczno-konsultacyjna, na której łączę
-              zdobyte doświadczenie z medycyny akademickiej z medycyną
-              naturalną. Przebieg wizyty: diagnoza z tęczówki oka, analiza
-              dostarczonych badań laboratoryjnych, szczegółowy wywiad
-              medyczny, konsultacja, plan terapeutyczny. Wizyta trwa około
-              1h.
+              {firstVisitAnswer}
             </p>
           </details>
         </div>

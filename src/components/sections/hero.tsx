@@ -49,7 +49,7 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-2 lg:items-center lg:px-8">
         <div>
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
-            Gabinet Terapii Naturalnych
+            Gabinet Terapii Naturalnych — Warszawa
           </p>
           <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-brand-900 sm:text-5xl">
             Wspieramy człowieka,
@@ -58,9 +58,9 @@ export default function Hero() {
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-neutral-700">
             Zintegrowane podejście łączące 20 lat doświadczenia medycznego z
-            wiedzą wschodniej akupunktury i terapii Su Jok. Indywidualna
-            diagnoza, konsultacja i terapia — dopasowane do Ciebie, nie do
-            schematu.
+            wiedzą wschodniej akupunktury i terapii Su Jok w Warszawie.
+            Indywidualna diagnoza, konsultacja i terapia — dopasowane do
+            Ciebie, nie do schematu.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

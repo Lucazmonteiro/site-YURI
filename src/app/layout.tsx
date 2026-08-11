@@ -28,14 +28,24 @@ export const metadata: Metadata = {
   keywords: [
     "akupunktura Warszawa",
     "terapia Su Jok",
+    "terapia Su Jok Warszawa",
     "gabinet terapii naturalnych",
+    "gabinet terapii naturalnych Warszawa",
+    "medycyna zintegrowana Warszawa",
+    "medycyna integracyjna Warszawa",
     "Jurij Tokar",
     "medycyna naturalna Warszawa",
-    "terapia antynikotynowa",
-    "irydologia",
+    "naturopata Warszawa",
+    "terapia antynikotynowa Warszawa",
+    "irydologia Warszawa",
+    "ziołolecznictwo Warszawa",
+    "akupunktura Bielany",
     "Bielany",
   ],
   authors: [{ name: siteConfig.doctorName }],
+  alternates: {
+    canonical: siteConfig.url,
+  },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
@@ -43,12 +53,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} | Akupunktura i terapia Su Jok — Warszawa`,
     description: siteConfig.description,
-    images: [{ url: "/images/doctor-portrait.jpg", width: 720, height: 448 }],
+    images: [
+      {
+        url: "/images/doctor-portrait.jpg",
+        width: 720,
+        height: 448,
+        alt: `${siteConfig.doctorName} — ${siteConfig.name}, Warszawa-Bielany`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
+    images: ["/images/doctor-portrait.jpg"],
   },
   robots: {
     index: true,
@@ -59,22 +77,52 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
-  name: "Gabinet Terapii Naturalnych",
+  "@id": `${siteConfig.url}/#gabinet`,
+  name: siteConfig.name,
+  description: siteConfig.description,
   image: `${siteConfig.url}/images/doctor-portrait.jpg`,
   url: siteConfig.url,
   telephone: siteConfig.phone,
+  inLanguage: "pl-PL",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Warszawa-Bielany",
+    addressLocality: "Warszawa",
     addressRegion: siteConfig.address.region,
     addressCountry: "PL",
   },
+  areaServed: [
+    { "@type": "City", name: "Warszawa" },
+    { "@type": "AdministrativeArea", name: "Bielany" },
+  ],
   medicalSpecialty: "Acupuncture",
   founder: {
     "@type": "Physician",
     name: siteConfig.doctorName,
   },
-  sameAs: [siteConfig.facebook, siteConfig.instagram],
+  sameAs: [siteConfig.facebook, siteConfig.instagram, siteConfig.bookingUrl],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "20",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Usługi gabinetu",
+    itemListElement: [
+      "Akupunktura klasyczna",
+      "Wizyta diagnostyka-konsultacja",
+      "Konsultacja + akupunktura",
+      "Irydologia",
+      "Terapia antynikotynowa",
+      "Ziołolecznictwo",
+    ].map((serviceName) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "MedicalTherapy",
+        name: serviceName,
+      },
+    })),
+  },
 };
 
 export default async function RootLayout({
