@@ -12,7 +12,7 @@ export const siteConfig = {
   tagline: "Wspieramy człowieka, nie chorobę",
   description:
     "Gabinet Terapii Naturalnych dr. Jurija Tokara w Warszawie-Bielanach. Akupunktura klasyczna, terapia Su Jok, irydologia, ziołolecznictwo i terapia antynikotynowa — zintegrowane podejście łączące medycynę akademicką z Wschodem.",
-  url: "https://gabinetterapiinaturalnych.pl",
+  url: "https://gabinetterapiinaturalnych.com",
   locale: "pl_PL",
   phone: "+48 609 525 660",
   phoneDisplay: "609 525 660",
